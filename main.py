@@ -2,20 +2,13 @@
 ### PROJECT START ###
 #####################
 
-########################
-## Chrome Driver Path ##
-########################
-driver = webdriver.Chrome(executable_path='C:/path/to/chromedriver.exe')
-
 ###############
 ### IMPORTS ###
 ###############
 import os
 import subprocess
 import time
-import sys
 from random import randint
-import random
 import keyboard
 
 
@@ -24,6 +17,7 @@ import keyboard
 ##########
 class bcolors:
     HEADER = '\033[95m'
+    BROWN = '\033[33m'
     OKBLUE = '\033[94m'
     OKGREEN = '\033[92m'
     WARNING = '\033[93m'
@@ -31,27 +25,27 @@ class bcolors:
     ENDC = '\033[0m'
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
+    BLINK = '\033[5m'
 
 
 ########
 # Help #
 ########
 def help():
-  print("sys.write (Displays words on screen)")
+  print(f"{bcolors.OKGREEN}sys.write (Displays words on screen){bcolors.ENDC}")
   print(" ")
   print("part1 ex: sys.write")
   print("part2 ex: Example Text")
-  print("\nsys.write (Displays words on screen)")
   print(" ")
   print("part1 ex: sys.var{1-4}")
   print(" ")
   print(" ")
-  print("ex: cls (clears the screen)")
+  print(f"{bcolors.OKGREEN}ex: cls (clears the screen){bcolors.ENDC}")
   print(" ")
   print("cls")
   print(" ")
   print(" ")
-  print("Variables (stores a Variable)")
+  print(f"{bcolors.OKGREEN}Variables (stores a Variable){bcolors.ENDC}")
   print(" ")
   print("=1")
   print("=2")
@@ -59,13 +53,13 @@ def help():
   print("=4")
   print(" ")
   print(" ")
-  print("ex: install {package name} (installs pakages)")
+  print(f"{bcolors.OKGREEN}ex: install [package name] (installs packages){bcolors.ENDC}")
   print(" ")
-  print(" All Modules are Time, Yummy GUI And Sleep")
+  print("All Modules are Time, Yummy GUI And Sleep")
   print("MORE COMMING SOON!")
   print(" ")
   print(" ")
-  print("ex: Sleep (VariableCode) (sleeps acording to the amount in the variable)")
+  print(f"{bcolors.OKGREEN}ex: Sleep (VariableCode) (sleeps acording to the amount in the variable){bcolors.ENDC}")
   print(" ")
   print("VariableCode")
   print("VariableCode2")
@@ -73,11 +67,11 @@ def help():
   print("VariableCode4")
   print(" ")
   print(" ")
-  print("ex: sleep from (10 | 100) (sleeps for a random amount From The Given Range)")
+  print(f"{bcolors.OKGREEN}ex: sleep from (10 | 100) (sleeps for a random amount From The Given Range){bcolors.ENDC}")
   print(" ")
   print("sleep from (10 | 100)")
   print("sleep from (10 | 100)")
-  print("key.Press() (Presses Any Key 1 Time) roda install keyboard first")
+  print(f"{bcolors.OKGREEN}key.Press() (Presses Any Key 1 Time) roda install keyboard first{bcolors.ENDC}")
   print("")
   print("ex part1: key.press()")
   print("ex part2: a")
@@ -157,8 +151,8 @@ def intro():
 #######################
 # Donate To My Paypal @ 
 #######################
-print(f"{bcolors.WARNING}Buy Me A Travis Scott Meal:{bcolors.ENDC}")
-print(f"{bcolors.FAIL}https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=ZGR9A4N6RGGKL\n\n\n{bcolors.ENDC}")
+print(f"{bcolors.BROWN}Buy Me A Travis Scott Meal:{bcolors.ENDC}")
+print(f"{bcolors.FAIL}https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=ZGR9A4N6RGGKL{bcolors.ENDC}")
 time.sleep(6)
 clear()
 time.sleep(3)
@@ -334,15 +328,7 @@ while True:
 ################
   if name == "roda install":
 
-    installing = input("webbrowse")
-
-    if installing ==  "":
-        print("Installing WebBrowse")
-        import webbrowser
-        time.sleep(2)
-        print("Installed WebBrowse")
-        time.sleep(2)
-        clear()
+    installing = input("Install :: ")
 
     if installing == "keyboard":
         print("Installing keyboard")
@@ -371,13 +357,14 @@ while True:
         time.sleep(2)
         clear()
 
-    if installing == "image":
-        print("Installing Image")
-        from PIL import Image
+    if installing == "name":
+        print("Installing " + installing)
+        #import Example 
         time.sleep(2)
-        print("Installed Image")
+        print("Installed " + installing)
         time.sleep(2)
         clear()
+
 # If Else#
     else:
         print(f"{bcolors.FAIL}Error: No Package Named  {bcolors.ENDC}" + installing)
@@ -427,35 +414,8 @@ while True:
 
 # Yummi Gui (BUTTON) #
   if name == "yummi.Button()":
-    BTXT = input("Button")
-    Button = app.Button(top, text =(BTXT))
+    BTXT = input("Button Name")
+    BTXT = input("(Requires Python Knowledge) Command: ")
+    Button = Button(app, text=(BTXT), command=())
     Button.pack()
-
-##############
-# Web Browse #
-##############
-# WebBrowse (OPENPAGEWITHOUTTAB) #
-  if name == "web.Open()":
-      Site = input("Open: ")
-      webbrowser.open(Site) 
-
-# WebBrowse (NEWTAB) #
-  if name == "web.OpenTab()":
-      NewTabSite = input("Open: ")
-      webbrowser.open_new_tab('http://www.python.org') 
-im = Image.open("bride.jpg")
-
-##############
-# Web Browse #
-##############
-
-# WebBrowse (OPENPAGEWITHOUTTAB) #
-  if name == "Image.Open()":
-      OpenIMG = input("Open Image: ")
-      im = Image.open(OpenIMG)
-# WebBrowse (OPENPAGEWITHOUTTAB) #
-  if name == "Image.Open()":
-      OpenIMG = input("Open Image: ")
-      im = Image.open(OpenIMG)
-
 
