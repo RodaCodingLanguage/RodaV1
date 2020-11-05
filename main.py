@@ -5,7 +5,7 @@
 ########################
 ## Chrome Driver Path ##
 ########################
-
+driver = webdriver.Chrome(executable_path='C:/path/to/chromedriver.exe')
 
 ###############
 ### IMPORTS ###
